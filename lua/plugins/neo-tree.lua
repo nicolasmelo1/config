@@ -41,10 +41,15 @@ return {
         hide_gitignored = true,
         hide_by_name = {
           ".git",
+          "node_modules",
           ".DS_Store",
           -- 'thumbs.db',
         },
         never_show = {},
+      },
+      filters = {
+        dotfiles = false,
+        exclude = { ".git", "node_modules", ".DS_Store" },
       },
       bind_to_cwd = false,
       follow_current_file = { enabled = true },

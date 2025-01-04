@@ -41,7 +41,8 @@ map("n", "<leader>C", function()
 end, { desc = "Delete Buffer" })
 
 -- some utilities
-map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and Replace RegExp" })
+map("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
+map("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and Replace RegExp" })
 map("n", "tn", "<cmd>tabnew<cr>")
 map("n", "<leader>n", "<cmd>noh<cr>", { desc = "Remove highlighting of search matches" })
 
