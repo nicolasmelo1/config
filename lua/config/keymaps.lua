@@ -31,10 +31,6 @@ map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>")
 map("n", "<leader>fa", "<cmd>Telescope live_grep_args<cr>")
 map("n", "<leader>fx", "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,--glob=.env<cr>")
 
--- Tranparent
-map("n", "<leader>uT", "<cmd>TransparentEnable<cr>", { desc = "Enable background transparency" })
-map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle background transparency" })
-
 -- mini.nvim
 map("n", "<leader>C", function()
   require("mini.bufremove").delete(0, false)
@@ -42,7 +38,7 @@ end, { desc = "Delete Buffer" })
 
 -- some utilities
 map("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
-map("n", "<leader>rr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and Replace RegExp" })
+map("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and Replace RegExp" })
 map("n", "tn", "<cmd>tabnew<cr>")
 map("n", "<leader>n", "<cmd>noh<cr>", { desc = "Remove highlighting of search matches" })
 
