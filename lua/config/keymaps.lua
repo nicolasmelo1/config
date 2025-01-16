@@ -38,7 +38,24 @@ end, { desc = "Delete Buffer" })
 
 -- some utilities
 map("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
-map("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and Replace RegExp" })
+map(
+  "v",
+  "<leader>%S",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Search and Replace RegExp All Files" }
+)
+map(
+  "v",
+  "<leader>%s",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Search and Replace RegExp Current File" }
+)
+map(
+  "v",
+  "<leader>r",
+  [[:<C-u>%s%\<<C-r><C-w>\>%gc<Left><Left><Left>]],
+  { desc = "Search and Replace Selected Text Globally" }
+)
 map("n", "tn", "<cmd>tabnew<cr>")
 map("n", "<leader>n", "<cmd>noh<cr>", { desc = "Remove highlighting of search matches" })
 
@@ -56,3 +73,7 @@ map("v", ">", ">gv")
 -- moving lines
 map("x", "J", ":m '>+1<cr>gv=gv")
 map("x", "K", ":m '<-2<cr>gv=gv")
+
+-- Diagnostics
+map("n", "<leader>]", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to next diagnostic" })
+map("n", "<leader>[", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to previous diagnostic" })

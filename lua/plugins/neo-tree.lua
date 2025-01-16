@@ -47,10 +47,6 @@ return {
         },
         never_show = {},
       },
-      filters = {
-        dotfiles = false,
-        exclude = { ".git", "node_modules", ".DS_Store" },
-      },
       bind_to_cwd = false,
       follow_current_file = { enabled = true },
       use_libuv_file_watcher = true,
